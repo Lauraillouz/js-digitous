@@ -90,7 +90,13 @@ console.log(doubleQuotes);
 
 // Banjaur à la place de Bonjour
 var changed = "Bonjour";
-const search = "o";
-const replaceWith = "a";
+var search = "o";
+var replaceWith = "a";
 var changed = changed.split(search).join(replaceWith);
-console.log(changed); */
+console.log(changed);  */
+
+// deuxième méthode
+var changed = "Bonjour";
+var updatedChanged = changed.replace(/o/g, 'a');
+
+console.log (updatedChanged);
