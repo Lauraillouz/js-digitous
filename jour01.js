@@ -82,10 +82,10 @@ console.log("chat3 : ", chat3);
 // Échappement
 //String avec deux lignes
 var stringTwoLines = "Ceci est une première ligne\nEt ceci en est une deuxième";
-console.log(stringTwoLines); 
+console.log(stringTwoLines);
 
 // String mélangeant des guillemets simple et doubles
-var doubleQuotes = "This is a 'joke'";
+var doubleQuotes = "He said \"This is a 'joke'\"";
 console.log(doubleQuotes); 
 
 // Banjaur à la place de Bonjour
@@ -93,10 +93,10 @@ var changed = "Bonjour";
 var search = "o";
 var replaceWith = "a";
 var changed = changed.split(search).join(replaceWith);
-console.log(changed);  */
+console.log(changed);  
 
 // deuxième méthode
 var changed = "Bonjour";
 var updatedChanged = changed.replace(/o/g, 'a');
 
-console.log (updatedChanged);
+console.log (updatedChanged); */
