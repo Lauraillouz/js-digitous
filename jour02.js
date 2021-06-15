@@ -132,13 +132,22 @@ switch (monthChanged) {
 
 // BONUS ***
 var roundedNumber = 3.6;
-if (Math.floor(roundedNumber) === (roundedNumber + 0.4)) {
-    console.log(Math.floor(roundedNumber));
-} else {
+roundedNumber = 3.3;
+roundedNumber = 3.8;
+roundedNumber = 12.4;
+if ((roundedNumber - Math.floor(roundedNumber)) >= 0.5) {
     console.log(Math.ceil(roundedNumber));
+} else {
+    console.log(Math.floor(roundedNumber));
 } */
 
 var roundedNumber = 3.6;
-if ((roundedNumber *= 10 + 0.5) / 10 >= Math.ceil(roundedNumber)) {
-    console.log(Math.ceil(roundedNumber));
+roundedNumber = roundedNumber.toString();
+newRoundedNumber = roundedNumber.substring(roundedNumber.indexOf("."));
+newRoundedNumber = 0 + newRoundedNumber;
+console.log(newRoundedNumber);
+if (newRoundedNumber >= 0.5) {
+    console.log(Math.ceil(roundedNumber))
+} else {
+    console.log(Math.floor(roundedNumber));
 }
