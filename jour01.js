@@ -8,6 +8,7 @@ console.log(test);
 // 03 - Concatenation
 var name = "Laura";
 console.log("Nice to meet you" + " " + name); 
+console.log(`Nice to meet you ${name});
 
 // 04 - String Length
 var testLength = "I'm very long!";
@@ -31,7 +32,7 @@ console.log(letters);
 
 // 08 - Template
 var age = 32;
-var template = (`I'm ${age} years old`);
+var template = `I'm ${age} years old`;
 console.log(template); 
 
 
@@ -75,9 +76,9 @@ console.log(`The file was uploaded from ${filePath}`);
 var chat = "chat noir";
 var chat2 = chat.substring(2);
 var chat3 = chat.substring(2, 4);
-console.log("chat : ", chat);
-console.log("chat2 : ", chat2);
-console.log("chat3 : ", chat3); 
+console.log(chat);
+console.log(chat2);
+console.log(chat3); 
 
 // Échappement
 //String avec deux lignes
@@ -98,5 +99,4 @@ console.log(changed);
 // deuxième méthode
 var changed = "Bonjour";
 var updatedChanged = changed.replace(/o/g, 'a');
-
 console.log (updatedChanged); */
