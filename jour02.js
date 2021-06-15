@@ -44,12 +44,13 @@ if (score >= limit) {
 } else {
     console.log("Oh nooo...");
 } 
+score = 1;
 
 // 07 - Condition II
 var password = "azerty";
 if (password.length > 5) {
     console.log("The password is secure");
-} */
+} 
 
 // 08 - Condition III
 var limit = 50;
@@ -64,4 +65,80 @@ switch (true) {
         break;
     default:
         console.log("Nothing is good");
+} 
+
+
+
+
+// BONUS *
+var min = 1;
+var max = 6;
+var random = Math.floor (Math.random() * (max - min + 1) + min);
+if (random === 6) {
+    console.log("Yes I win!");
+} else {
+    console.log("So close...");
+} 
+
+// BONUS **
+var month = "January";
+switch (month) {
+    case "December":
+    case "January":
+    case "February":
+        console.log("Winter");
+        break;
+    case "March":
+    case "April":
+    case "May":
+        console.log("Spring");
+        break;
+    case "June":
+    case "July":
+    case "August":
+        console.log("Summer");
+        break;
+    case "September":
+    case "October":
+    case "November":
+        console.log("Fall")
+}
+month = "February";
+
+// si on veut que le mois soit aléatoire 
+var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var monthChanged = month[Math.floor(Math.random() * month.length)];
+switch (monthChanged) {
+    case "December":
+    case "January":
+    case "February":
+        console.log("Winter");
+        break;
+    case "March":
+    case "April":
+    case "May":
+        console.log("Spring");
+        break;
+    case "June":
+    case "July":
+    case "August":
+        console.log("Summer");
+        break;
+    case "September":
+    case "October":
+    case "November":
+        console.log("Fall")
+} 
+
+// BONUS ***
+var roundedNumber = 3.6;
+if (Math.floor(roundedNumber) === (roundedNumber + 0.4)) {
+    console.log(Math.floor(roundedNumber));
+} else {
+    console.log(Math.ceil(roundedNumber));
+} */
+
+var roundedNumber = 3.6;
+if ((roundedNumber *= 10 + 0.5) / 10 >= Math.ceil(roundedNumber)) {
+    console.log(Math.ceil(roundedNumber));
 }
