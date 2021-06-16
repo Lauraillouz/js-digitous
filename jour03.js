@@ -33,6 +33,7 @@ for (var i = 0;  i <= limit; i++) {
     total = total + i;
 }
 console.log(total); 
+
 // 06 - Reverse
 var sentence = "Hello Konexio !";
 var reversedSentence = "";
@@ -41,3 +42,25 @@ for (var i = sentence.length - 1; i >= 0; i--) {
 }
 console.log(reversedSentence); */
 
+
+
+
+// BONUS *
+var goal = 100;
+for (var i = 0; i <= goal; i++) {
+    if (i % 3 === 0) {
+        console.log("fizz");
+    }
+    else if (i % 5 === 0) {
+        console.log("buzz");
+    }
+    else if (i % 3 === 0 && i % 5 === 0) {
+        console.log("buzz");
+    }
+    else if (i % 7 === 0) {
+        continue;
+    }
+    else {
+        console.log(i);
+    }
+}
