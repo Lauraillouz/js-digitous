@@ -102,6 +102,8 @@ switch (month) {
     case "October":
     case "November":
         console.log("Fall")
+    default:
+        console.log("That's not a month")
 }
 month = "February";
 
@@ -141,6 +143,14 @@ if ((roundedNumber - Math.floor(roundedNumber)) >= 0.5) {
     console.log(Math.floor(roundedNumber));
 } 
 
+// autre méthode
+if (roundedNumber % 1 >= 0.5) {
+    console.log(Math.ceil(roundedNumber));
+} else {
+    console.log(Math.floor(roundedNumber));
+} 
+
+
 var roundedNumber = 3.6;
 roundedNumber = roundedNumber.toString();
 newRoundedNumber = roundedNumber.substring(roundedNumber.indexOf("."));
@@ -151,6 +161,3 @@ if (newRoundedNumber >= 0.5) {
 } else {
     console.log(Math.floor(roundedNumber));
 } */
-
-
-// BONUS ****
