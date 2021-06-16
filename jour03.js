@@ -73,7 +73,26 @@ while (i < limit) {
     i++;
     total = total + i;
 }
-console.log(total); */
+console.log(total); 
 
 // BONUS ***
-var promo = ["Baydir", "Rahmad", "Amadou", "Andy", "Ange", "Artha", ]
+var promo = ["Baydir", "Rahmad", "Amadou", "Andy", "Ange", "Artha", "Victor", "Elisabeth", "Laura", "Kévin", "Asaad", "Emran", "Anthony", "Julien", "Eliott", "Amar", "Elodie", "Yangchen"];
+var randomPerson = promo[Math.floor(Math.random() * promo.length)];
+console.log(randomPerson); 
+*/
+
+// BONUS ****
+var tab = [];
+for (var i = 0; i < 20; i++) {
+    tab.push(Math.floor(Math.random() * 100 + 1));
+}
+console.log(tab);
+
+var newTab = [0];
+ for (var i = 0; i < tab.length; i++) {
+    if (newTab < tab[i]) {
+        newTab.push(tab[i]);
+        newTab.shift();
+    }
+ }
+ console.log(newTab); 
