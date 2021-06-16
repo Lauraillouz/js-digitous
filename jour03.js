@@ -88,10 +88,25 @@ for (var i = 0; i < 20; i++) {
 }
 console.log(tab);
 
-var min = tab[0], max = tab[0];
+// sortir la valeur max sans Math.max
+ var min = tab[0], max = tab[0];
+
  for (var i = 1; i < tab.length; i++)  {
      var arrayElement = tab[i];
      min = (arrayElement < min) ? arrayElement : min;
      max = (arrayElement > max) ? arrayElement : max;
  }
  console.log(max); 
+
+ // Deuxième manière de faire
+ var min = tab[0], max = tab[0];
+ for (var i = 1; i < tab.length; i++)  {
+    var arrayElement = tab[i];
+    if (arrayElement < min) {
+        min = arrayElement;
+    }
+    else if (arrayElement > max) {
+        max = arrayElement;
+    }
+}
+console.log(max);
