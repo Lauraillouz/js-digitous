@@ -40,7 +40,7 @@ var reversedSentence = "";
 for (var i = sentence.length - 1; i >= 0; i--) {
     reversedSentence += sentence[i];
 }
-console.log(reversedSentence); */
+console.log(reversedSentence); 
 
 
 
@@ -48,14 +48,14 @@ console.log(reversedSentence); */
 // BONUS *
 var goal = 100;
 for (var i = 0; i <= goal; i++) {
-    if (i % 3 === 0) {
-        console.log("fizz");
+    if (i % 3 === 0 && i % 5 === 0)  {
+        console.log("fizzbuzz");
     }
     else if (i % 5 === 0) {
         console.log("buzz");
     }
-    else if (i % 3 === 0 && i % 5 === 0) {
-        console.log("buzz");
+    else if (i % 3 === 0) {
+        console.log("fizz");
     }
     else if (i % 7 === 0) {
         continue;
@@ -63,4 +63,17 @@ for (var i = 0; i <= goal; i++) {
     else {
         console.log(i);
     }
+} 
+
+// BONUS **
+var total = 0;
+var limit = 10;
+var i = 0;
+while (i < limit) {
+    i++;
+    total = total + i;
 }
+console.log(total); */
+
+// BONUS ***
+var promo = ["Baydir", "Rahmad", "Amadou", "Andy", "Ange", "Artha", ]
