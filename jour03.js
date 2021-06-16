@@ -88,11 +88,10 @@ for (var i = 0; i < 20; i++) {
 }
 console.log(tab);
 
-var newTab = [0];
- for (var i = 0; i < tab.length; i++) {
-    if (newTab < tab[i]) {
-        newTab.push(tab[i]);
-        newTab.shift();
-    }
+var min = tab[0], max = tab[0];
+ for (var i = 1; i < tab.length; i++)  {
+     var topNumber = tab[i];
+     min = (topNumber < min) ? topNumber : min;
+     max = (topNumber > max) ? topNumber : max;
  }
- console.log(newTab); 
+ console.log(max); 
