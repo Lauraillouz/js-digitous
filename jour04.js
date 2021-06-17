@@ -75,3 +75,21 @@ function format(num) {
 let formatedTime;
 formatedTime = format(3700);
 console.log(formatedTime); */
+
+
+
+
+// BONUS *
+function generatePassword(num) {
+    let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let password="";
+    for (let i = 0; i < num; i++) {
+        let random = Math.floor(Math.random() * alphabet.length);
+        password += alphabet.charAt(random);
+    }
+    return password;
+}
+
+let generatedPassword;
+generatedPassword = generatePassword(6);
+console.log(generatedPassword);
