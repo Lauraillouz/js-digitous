@@ -92,8 +92,8 @@ function generatePassword(num) {
 
 let generatedPassword;
 generatedPassword = generatePassword(6);
-console.log(generatedPassword); */
-
+console.log(generatedPassword); 
+*/
 
 // BONUS **
 function launchDice (numberOfDice) {
@@ -118,4 +118,4 @@ else if (joueur2 > joueur1) {
     console.log(`Avec ${joueur2}, c'est le joueur 2 qui gagne la partie !`)
 } else {
     console.log("Incroyable, égalité parfaite !")
-}
+} 
