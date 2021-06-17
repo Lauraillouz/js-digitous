@@ -74,7 +74,7 @@ function format(num) {
 }
 let formatedTime;
 formatedTime = format(3700);
-console.log(formatedTime); */
+console.log(formatedTime); 
 
 
 
@@ -92,4 +92,27 @@ function generatePassword(num) {
 
 let generatedPassword;
 generatedPassword = generatePassword(6);
-console.log(generatedPassword);
+console.log(generatedPassword); */
+
+
+// BONUS **
+function launchDice (numberOfDice) {
+    let numberDiceMin = 1;
+    let numberDiceMax = 6;
+    let numberDiceRandom = Math.floor(Math.random() * (numberDiceMax - numberDiceMin + 1) + numberDiceMin);
+    let resultDice = numberDiceRandom * numberOfDice;
+    return resultDice;
+}
+let launchedDice;
+launchedDice = launchDice(5);
+
+let joueur1 = launchDice(5);
+let joueur2 = launchDice(5);
+if (joueur1 > joueur2) {
+    console.log(`Avec ${joueur1}, c'est le joueur 1 qui gagne la partie !`)
+}
+else if (joueur2 > joueur1) {
+    console.log(`Avec ${joueur2}, c'est le joueur 2 qui gagne la partie !`)
+} else {
+    console.log("Incroyable, égalité parfaite !")
+}
