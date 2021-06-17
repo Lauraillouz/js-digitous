@@ -99,8 +99,11 @@ console.log(generatedPassword); */
 function launchDice (numberOfDice) {
     let numberDiceMin = 1;
     let numberDiceMax = 6;
-    let numberDiceRandom = Math.floor(Math.random() * (numberDiceMax - numberDiceMin + 1) + numberDiceMin);
-    let resultDice = numberDiceRandom * numberOfDice;
+    let resultDice = 0;
+    for (let i = 0; i < numberOfDice; i++) {
+        let tirage = Math.floor(Math.random() * (numberDiceMax - numberDiceMin + 1) + numberDiceMin);
+        resultDice += tirage;
+    }
     return resultDice;
 }
 let launchedDice;
