@@ -3,24 +3,26 @@ let cat = {
     name: "Garfield",
     age: 3,
     isCute: true
-}
+};
 console.log(cat);
 console.log(cat.age);
-if (cat.isCute = true) {
+if (cat.isCute) {
     console.log("So cute!");
-}
+};
 
 // 02 - Combine
 let cat2 = {
     name: "Robert",
     age: 32,
     isCute: false,
-}
+};
 let cats = [cat, cat2];
-console.log(cat.age);
-console.log(cat["age"]);
-console.log(cat2.isCute);
-console.log(cat2["isCute"]); 
+console.log(cats[0].age);
+console.log(cats[0]["age"]);
+console.log(cats[1].isCute);
+console.log(cats[1]["isCute"]); 
+var otherWayForIsCute = "isCute";
+console.log(cats[1][otherWayForIsCute]);
 
 // 03 - Even
 function checkIfEven (num) {
@@ -34,7 +36,7 @@ var checkedIfEven;
 checkedIfEven = checkIfEven(133);
 console.log(checkedIfEven); 
 
-// O4 - Comapre
+// O4 - Compare
 function compare(num1, num2) {
     if (num1 > num2) {
         return `${num1} is bigger`;
@@ -53,10 +55,12 @@ console.log(compared);
 function addUp (num) {
     let i = 0;
     let result = 0;
+
     while (i < num) {
         i++;
         result += i;
     }
+
     return result;
 }
 let addedUp;
@@ -80,20 +84,29 @@ console.log(formatedTime);
 
 
 // BONUS *
+
 function generatePassword(num) {
-    let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let password="";
+
+    if (num < 6 || num > 15) {
+        return "error";
+    }
+
     for (let i = 0; i < num; i++) {
         let random = Math.floor(Math.random() * alphabet.length);
         password += alphabet.charAt(random);
     }
+
     return password;
 }
 
 let generatedPassword;
-generatedPassword = generatePassword(6);
+generatedPassword = generatePassword(12);
 console.log(generatedPassword); 
-*/
+
+
+
 
 // BONUS **
 function launchDice (numberOfDice) {
@@ -118,4 +131,4 @@ else if (joueur2 > joueur1) {
     console.log(`Avec ${joueur2}, c'est le joueur 2 qui gagne la partie !`)
 } else {
     console.log("Incroyable, égalité parfaite !")
-} 
+} */
