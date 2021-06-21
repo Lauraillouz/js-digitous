@@ -9,37 +9,49 @@ console.log(result);
 let result = 0;
 for (let i = 100; i <= 1000; i++) {
     if (i % 7 === 0) {
-        result += 1 ;
+        result ++;
     }
 }
 console.log(result); 
 
 // 03 - Chanceux
 let result = 0;
-for (let i = 1; i <= 20; i++) {
     let min = 1;
     let max = 6;
+for (let i = 1; i <= 20; i++) {
     let random =  Math.floor(Math.random() * (max - min + 1) + min);
     if (random >= 5) {
         result += random;
     }
 }
-console.log(result); */
+console.log(result);
 
 // 04 - Des boîtes
 console.log(box1) 
 /* affichera :
-5
-10
+22
+17
 */
 console.log(box2) 
 /* affichera :
-10
-18
+22
+30
 */
 console.log(i) 
 /* affichera :
-10
+22
 13
+*/
+
+// 05 - Des setiob
+console.log(box1) 
+/* affichera :
+12
+42
+*/
+console.log(box2) 
+/* affichera :
+12
+3
 */
 
