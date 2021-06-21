@@ -52,14 +52,14 @@ console.log(box2)
 
 // 06 - Encore des boîtes
 console.log(box1) 
-/* affichera :
-5
-*/
-console.log(box2) 
-/* affichera :
--2
-*/
+console.log(box2)
 console.log(i) 
 /* affichera :
+0
+3
+-3
+-2
+5
+-2
 -4
 */
