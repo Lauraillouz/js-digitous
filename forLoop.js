@@ -25,3 +25,21 @@ for (let i = 1; i <= 20; i++) {
     }
 }
 console.log(result); */
+
+// 04 - Des boîtes
+console.log(box1) 
+/* affichera :
+5
+10
+*/
+console.log(box2) 
+/* affichera :
+10
+18
+*/
+console.log(i) 
+/* affichera :
+10
+13
+*/
+
