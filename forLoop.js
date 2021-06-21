@@ -29,29 +29,37 @@ console.log(result);
 // 04 - Des boîtes
 console.log(box1) 
 /* affichera :
-22
 17
 */
 console.log(box2) 
 /* affichera :
-22
 30
 */
 console.log(i) 
 /* affichera :
-22
-13
+14
 */
 
 // 05 - Des setiob
 console.log(box1) 
 /* affichera :
-12
 42
 */
 console.log(box2) 
 /* affichera :
-12
-3
+0
 */
 
+// 06 - Encore des boîtes
+console.log(box1) 
+/* affichera :
+5
+*/
+console.log(box2) 
+/* affichera :
+-2
+*/
+console.log(i) 
+/* affichera :
+-4
+*/
