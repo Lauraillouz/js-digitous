@@ -23,15 +23,14 @@ console.log(calculated); */
 let numberOne = parseInt(stringNumbers[0]);
 let operator = stringNumbers[1];
 let numberTwo = parseInt(stringNumbers[2]);
-calculate(numberOne, operator, numberTwo); 
+calculate(numberOne, operator, numberTwo); */
 
 // 02 - Table
-function multiply(num) {
-    for (i = 1; i <= 10; i++) {
-        console.log(num * i);
-    }
-}
+var {multiply, addition} = require("./table-utils.js");
 let stringNumber = process.argv.slice(2);
 let number = parseInt(stringNumber[0]);
-multiply(number); */
+multiply(number); 
+
+// Separate Table
+addition(number);
 
