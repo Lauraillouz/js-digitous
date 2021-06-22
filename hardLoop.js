@@ -48,3 +48,10 @@ while (i <= numbers.length) {
 }
 console.log(`${myNumber} is the first number between 75 and 100`); */
 
+// 04 Nested Loop
+let words = ["hello", "goodbye", "yes", "no", "stop", "go go go"];
+let letters = [];
+for (i = 0; i <= words.length; i++) {
+    words[i].split("");
+}
+console.log(words);
