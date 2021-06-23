@@ -49,17 +49,20 @@ function swap (string) {
     }
     console.log(reverseCase);
 }
-swap("Hello World"); */
+swap("Hello World"); 
 
 
-
+*/
 
 // BONUS *
 function makeItSpongeBob (string) {
     let crazyString = "";
     for (let i = 0; i < string.length; i++) {
         let letter = string[i];
-        if (string.indexOf(letter) % 2 === 0) {
+        if (string.indexOf(letter) % 2 === 0 && letter === letter.toUpperCase()) {
+            crazyString = crazyString + letter.toLowerCase();
+        }
+         else if (string.indexOf(letter) % 2 === 0) {
             crazyString = crazyString + letter.toUpperCase();
         } else {
             crazyString = crazyString + letter;
@@ -67,4 +70,6 @@ function makeItSpongeBob (string) {
     }
     console.log(crazyString);
 }
-makeItSpongeBob("Javascript is easy");
+makeItSpongeBob("Javascript is easy"); 
+
+// BONUS **
