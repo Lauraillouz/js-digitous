@@ -23,7 +23,7 @@ function countEach (string) {
         console.log("false");
     }
 }
-countEach("xoxo"); */
+countEach("xoxo"); 
 
 // 03 - Palindrome
 function checkPal (string) {
@@ -34,4 +34,19 @@ function checkPal (string) {
         console.log("Nope");
     }
 }
-checkPal("laptop");
+checkPal("laptop"); */
+
+// 04 - Swap
+function swap (string) {
+    let reverseCase = "";
+    for (let i = 0; i < string.length; i++) {
+        let letter = string[i];
+        if (letter === letter.toLowerCase()) {
+            reverseCase =  reverseCase + letter.toUpperCase();
+        } else if (letter === letter.toUpperCase()) {
+            reverseCase = reverseCase + letter.toLowerCase();
+        }
+    }
+    console.log(reverseCase);
+}
+swap("Hello World");
