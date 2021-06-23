@@ -26,5 +26,12 @@ function countEach (string) {
 countEach("xoxo"); */
 
 // 03 - Palindrome
-
-
+function checkPal (string) {
+    let reverseString = string.split("").reverse().join("");
+    if (string === reverseString) {
+        console.log("Palindrome !");
+    } else if (string !== reverseString) {
+        console.log("Nope");
+    }
+}
+checkPal("laptop");
