@@ -70,7 +70,7 @@ function makeItSpongeBob (string) {
     }
     console.log(crazyString);
 }
-makeItSpongeBob("Javascript is easy"); */
+makeItSpongeBob("Javascript is easy"); 
 
 // BONUS **
 
@@ -95,4 +95,4 @@ function countEach (string) {
         console.log("false");
     }
 }
-countEach("XxOoo"); 
+countEach("XxOoo"); */

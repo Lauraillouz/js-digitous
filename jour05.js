@@ -74,39 +74,32 @@ play(); */
 
 // BONUS *
 var prompt = require("prompt");
+var colors = require("colors");
 
 prompt.start();
 
 let words = ["brute", "poule", "botte", "pelle", "maire", "tarte", "terre"]
 let randomWord = words[Math.floor(Math.random() * words.length)];
-
+var count = 0;
 function motus () {
     prompt.get({
         name: "word",
         description: "Prêt à jouer à Motus ?"
     }, function (err, res) {
-
-        randomWord = randomWord.split("");
-        console.log(randomWord[0]);
-
-        function guessCount (userGuess) {
-            let tries = 0;
-            for (i = 0; i <= 6; i++) {
-                userGuess = tries;
-                if (res.word !== randomWord && tries < 6) {
-                    tries++;
-                    console.log("Essaye encore, tu vas y arriver !");
-                } else if (res.word === randomWord && tries < 6) {
-                    console.log("Bravo !!");
-                } else if (res.word !== randomWord && tries <= 6) {
-                    console.log("Perdu...");
-                }
-            }
+        if (count === 0) {
+            console.log(randomWord[0]);
         }
-        
-        res.word.forEach()
-        
-
+        else if (count > 6) {
+            return console.log("Perdu !!");
+        }
+        for (let i = 0; i < randomWord.length; i++) {
+            if (res.word[i] === randomWord[i]) {
+                res.word[i] = res.word[i].red;
+                console.log(res.word);
+            }
+        } 
+        count++;
+        motus();
     })
 }
 motus();
