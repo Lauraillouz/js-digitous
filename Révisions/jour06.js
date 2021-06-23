@@ -34,7 +34,7 @@ function checkPal (string) {
         console.log("Nope");
     }
 }
-checkPal("laptop"); */
+checkPal("laptop"); 
 
 // 04 - Swap
 function swap (string) {
@@ -49,4 +49,22 @@ function swap (string) {
     }
     console.log(reverseCase);
 }
-swap("Hello World");
+swap("Hello World"); */
+
+
+
+
+// BONUS *
+function makeItSpongeBob (string) {
+    let crazyString = "";
+    for (let i = 0; i < string.length; i++) {
+        let letter = string[i];
+        if (string.indexOf(letter) % 2 === 0) {
+            crazyString = crazyString + letter.toUpperCase();
+        } else {
+            crazyString = crazyString + letter;
+        }
+    }
+    console.log(crazyString);
+}
+makeItSpongeBob("Javascript is easy");
