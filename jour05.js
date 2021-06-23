@@ -33,7 +33,7 @@ multiply(number);
 
 // 03 - Separate Table
 addition(number);
-*/
+
 
 // 04 - Guess
 var prompt = require("prompt");
@@ -44,13 +44,13 @@ let min = 1;
 let max = 100;
 let mysteryNum = Math.floor(Math.random() * (max - min) + min);
 console.log(mysteryNum);
+
 function play() {
     prompt.get({
         name: "num",
         description: "Quel est le nombre mystère ?"
     }, function (err, res) {
         res.num = parseInt(res.num);
-        console.log(res.num);
         if (typeof res.num !== "number") {
             console.log("error");
             play();
@@ -68,4 +68,45 @@ function play() {
         }
     })
 }
-play();
+play(); */
+
+
+
+// BONUS *
+var prompt = require("prompt");
+
+prompt.start();
+
+let words = ["brute", "poule", "botte", "pelle", "maire", "tarte", "terre"]
+let randomWord = words[Math.floor(Math.random() * words.length)];
+
+function motus () {
+    prompt.get({
+        name: "word",
+        description: "Prêt à jouer à Motus ?"
+    }, function (err, res) {
+
+        randomWord = randomWord.split("");
+        console.log(randomWord[0]);
+
+        function guessCount (userGuess) {
+            let tries = 0;
+            for (i = 0; i <= 6; i++) {
+                userGuess = tries;
+                if (res.word !== randomWord && tries < 6) {
+                    tries++;
+                    console.log("Essaye encore, tu vas y arriver !");
+                } else if (res.word === randomWord && tries < 6) {
+                    console.log("Bravo !!");
+                } else if (res.word !== randomWord && tries <= 6) {
+                    console.log("Perdu...");
+                }
+            }
+        }
+        
+        res.word.forEach()
+        
+
+    })
+}
+motus();
