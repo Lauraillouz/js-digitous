@@ -52,7 +52,7 @@ function swap (string) {
 swap("Hello World"); 
 
 
-*/
+
 
 // BONUS *
 function makeItSpongeBob (string) {
@@ -70,6 +70,29 @@ function makeItSpongeBob (string) {
     }
     console.log(crazyString);
 }
-makeItSpongeBob("Javascript is easy"); 
+makeItSpongeBob("Javascript is easy"); */
 
 // BONUS **
+
+// BONUS ***
+function countEach (string) {
+    let countX = 0;
+    let countO = 0;
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === "x" || string[i] === "X") {
+            countX++;
+        }
+        else if (string[i] === "o" || string[i] === "O") {
+            countO++;
+        }
+    }
+    if (countX === 0 && countO === 0) {
+        console.log("Désolée, je ne compte que les 'x' et les 'o' !")
+    } else if (countX === countO) {
+        console.log("true");
+    } 
+    else {
+        console.log("false");
+    }
+}
+countEach("XxOoo"); 
