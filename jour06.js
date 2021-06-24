@@ -74,5 +74,19 @@ function formatDate (string) {
     console.log(`${day}/${month}/${year}`);
 }
 formatDate();
-
+/*
+// 02 - Age
+function calculateAge (string) {
+    let today = new Date();
+    let birthYear = string.substring(0, 4);
+    birthYear = parseInt(birthYear);
+    let age = today.getFullYear() - birthYear;
+    console.log(age);
+}
+calculateAge("1989-05-24"); 
 // Age
+function calculateAge (string) {
+    let birthday = moment(string, "YYYYMMDD").fromNow();
+    console.log(`You were born ${birthday}`);
+}
+calculateAge("1989-05-24"); */
