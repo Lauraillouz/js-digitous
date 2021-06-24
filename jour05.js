@@ -1,3 +1,5 @@
+var prompt = require("prompt");
+
 /* // 01 - Calculator
 function calculate(num1, operator, num2) {
     if (operator === "+") {
@@ -33,22 +35,20 @@ multiply(number);
 
 // 03 - Separate Table
 addition(number);
-
+*/
 
 // 04 - Guess
-var prompt = require("prompt");
-
 prompt.start();
 
 let min = 1;
 let max = 100;
 let mysteryNum = Math.floor(Math.random() * (max - min) + min);
 
-function play() {
+(function play() {
     prompt.get({
         name: "num",
         description: "Quel est le nombre mystère ?"
-    }, function (err, res) {
+    }, function (_, res) {
         res.num = parseInt(res.num);
         if (typeof res.num !== "number") {
             console.log("error");
@@ -62,17 +62,16 @@ function play() {
             console.log("C'est moins !");
             play();
         }
-        else if (res.num === mysteryNum) {
+        else {
             console.log("Bravo !!");
         }
     })
-}
-play(); 
-*/
+})()
 
 
-// BONUS *
-var prompt = require("prompt");
+
+
+/* // BONUS *
 var colors = require("colors");
 
 prompt.start();
@@ -111,7 +110,7 @@ function motus () {
             /* else if (res.word[j] === randomWord[j] && j !== i) {
                 guess += res.word[j].yellow;
                 console.log(guess);
-            } */
+            } */ /*
         } 
 
         }
@@ -119,4 +118,4 @@ function motus () {
         motus();
     })
 }
-motus();
+motus(); */
