@@ -1,4 +1,5 @@
 var prompt = require("prompt");
+var moment = require("moment");
 
 /*  // O1 - Format
 function formatDate (string) {
@@ -27,7 +28,7 @@ function calculateAge (string) {
 calculateAge("1989-05-24"); */
 
 
-// 03 - Validator
+/* // 03 - Validator
 prompt.start();
 
 function checkProfile () {
@@ -58,4 +59,20 @@ function checkProfile () {
         };
     })
 }
-checkProfile()
+checkProfile() */
+
+
+
+// BONUS *
+// Format
+function formatDate (string) {
+    let today = new Date();
+    today = moment(today).format('L');
+    day = today.substring(3, 5);
+    month = today.substring(0, 2);
+    year = today.substring(6);
+    console.log(`${day}/${month}/${year}`);
+}
+formatDate();
+
+// Age
