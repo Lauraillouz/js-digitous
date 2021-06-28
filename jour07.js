@@ -45,3 +45,39 @@ console.log(numbers); */
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 let even = numbers.filter(evenNum => evenNum % 2 === 0);
 console.log(even); */
+
+/* // 06 - Cakes
+let cakes = [
+	{
+		name: "cake",
+		flavor: "vanilla",
+		status: "available"
+	},
+	{
+		name: "brownie",
+		flavor: "chocolate",
+		status: "available"
+	},
+	{
+		name: "pie",
+		flavor: "strawberry",
+		status: "available"
+	},
+	{
+		name: "muffin",
+		flavor: "pistachio",
+		status: "available"
+	},
+	{
+		name: "donut",
+		flavor: "chocolate",
+		status: "available"
+	},
+]
+let chocolateCakes = cakes.filter(chocolate => chocolate.flavor === "chocolate");
+// console.log(chocolateCakes);
+let soldOutCakes = chocolateCakes.map(function (soldOut) {
+    soldOut.status = "sold out!";
+    return soldOut;
+});
+console.log(soldOutCakes); */
