@@ -16,3 +16,19 @@ let double = array.map(function(num) {
     return num * 2;
 });
 console.log(double); */
+
+/* // 03 - Map Names
+let longNames = [
+    {
+        firstName: "Jane",
+        lastName: "Doe"
+    },
+    {
+        firstName: "John",
+        lastName: "Smith"
+    }
+]
+let shortNames = longNames.map(function(name) {
+    return name.firstName + " " + name.lastName;
+})
+console.log(shortNames); */
