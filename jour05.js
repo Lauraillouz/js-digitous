@@ -1,6 +1,7 @@
-/* var prompt = require("prompt"); */
+var prompt = require("prompt");
+var colors = require("colors");
 
-// 01 - Calculator
+/* // 01 - Calculator
 function calculate(num1, operator, num2) {
     if (operator === "+") {
         console.log(num1 + num2);
@@ -20,7 +21,7 @@ function calculate(num1, operator, num2) {
 } 
 let calculated;
 calculated = calculate(135, "/", 25);
-console.log(calculated);
+console.log(calculated); */
 /* let stringNumbers = process.argv.slice(2);
 let numberOne = parseInt(stringNumbers[0]);
 let operator = stringNumbers[1];
@@ -71,51 +72,51 @@ let mysteryNum = Math.floor(Math.random() * (max - min) + min);
 
 
 
-/* // BONUS *
-var colors = require("colors");
+// BONUS *
 
 prompt.start();
 
-var words = ["brute", "poule", "botte", "pelle", "maire", "tarte", "terre"]
+// var words = ["brute", "poule", "botte", "pelle", "maire", "tarte", "terre"]
+var words = ["tarte", "brute"];
 var randomWord = words[Math.floor(Math.random() * words.length)];
+console.log(randomWord);
 var count = 1;
-var i;
-var j;
+var wordLength = 5;
+
+var schema = {
+    name: "word",
+    description: "Quel est le mot mystère ?",
+    pattern: new RegExp (`^[a-z]{${wordLength}}$`),
+    required: true,
+    message: `Entrez un mot de 5 lettres dont la première letter est ${randomWord[0]}`
+}
+
 function motus () {
-    prompt.get({
-        name: "word",
-        description: "Quel est le mot mystère ? Dites 'go' pour commencer",
-    }, function (err, res) {
-        let guess = "";
-        if (count === 1) {
-            console.log(`La première lettre est ${randomWord[0]}`);
-        }
-        else if (count > 6) {
-            return console.log("dommage...");
-        } else if (count > 6 && guess.length > randomWord.length) {
+    prompt.get(schema, function (err, res) {
+        if (count <= 6 && res.word === randomWord) {
+            return console.log("Bravo !!!");
+        } else if (count <= 6 && res.word.length > wordLength) {
             return console.log("Trop de lettres, dommage...");
-        }
-
-        if (count <= 6 && guess !== randomWord) {
-        for (i = 0; i < randomWord.length; i++) {
-            if (res.word === randomWord) {
-                console.log("Bravo tu as gagné !");
-                return;
+        } else if (count <= 6 && res.word.length < wordLength) {
+            return console.log("Pas assez de lettres, dommage...")
+        } else if (count > 6) {
+            return console.log("dommage...");
+        } else if (count <= 6 && res.word !== randomWord) {
+            var answer = res.word.split("");
+            var randomWordArray = randomWord.split("");
+            for (var i = 0; i < wordLength; i++) {
+                for (var j = 0; j < wordLength; j++) {
+                    if (answer[i] === randomWordArray[j] && i === j) {
+                        answer[i] = answer[i].red;
+                    } else if (answer[i] === randomWordArray[j] && i !== j) {
+                        answer[i] = answer[i].yellow;
+                    }
+                } 
             }
-            else if (res.word[i] === randomWord[i]) {
-                guess += res.word[i].red;
-                // res.word[i].replace(res.word[i].red);
-                console.log(guess);
-            }
-            /* else if (res.word[j] === randomWord[j] && j !== i) {
-                guess += res.word[j].yellow;
-                console.log(guess);
-            } */ /*
-        } 
-
+            count++;
+            console.log(answer.join(""));
+            motus();
         }
-        count++;
-        motus();
     })
 }
-motus(); */
+motus();

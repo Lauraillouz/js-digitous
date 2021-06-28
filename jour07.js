@@ -1,3 +1,5 @@
+const { random } = require("colors");
+var prompt = require("prompt");
 /* // O1 - File System
 var fs = require("fs");
 
@@ -81,3 +83,50 @@ let soldOutCakes = chocolateCakes.map(function (soldOut) {
     return soldOut;
 });
 console.log(soldOutCakes); */
+
+
+
+
+// BONUS *
+var words = ["baryton", "cerf", "djembe", "cymbale", "zozoter"];
+var randomWord = words[Math.floor(Math.random() * words.length)];
+var count = 1;
+var guess = [];
+
+
+function pendu() {
+    prompt.get({
+        name: "letter",
+        description: "Jouons au pendu",
+        message: `Jouons au pendu`
+    }), function (err, res) {
+
+        for (let i = 0; i < randomWord.length; i++) {
+            guess[i] = "_";
+        }
+        var remainingLetters = randomWord.length;
+
+        if (guess.length !== 1) {
+            console.log("Vous ne pouvez proposez qu'une seule lettre à la fois");
+        } else {
+            if (count > 10) {
+                return console.log("Perdu !");
+            }
+            else if (count <= 10 && guess === randomWord) {
+                return console.log("Bravo !");
+            }
+            else if (count <= 10 && guess !== randomWord) {
+                for (let j = 0; j < randomWord.length; j++) {
+                    if (randomWord[j] === res.letter) {
+                        guess[j] = res.letter;
+                        remainingLetters--;
+                    }
+                }
+            }
+        }
+        count++;
+        console.log(guess);
+        pendu();
+    }
+}
+pendu();
