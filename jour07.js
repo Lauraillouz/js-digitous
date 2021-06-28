@@ -41,3 +41,7 @@ let numbers = array.filter(function (num) {
 });
 console.log(numbers); */
 
+/* // 05 - Filter Even
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+let even = numbers.filter(evenNum => evenNum % 2 === 0);
+console.log(even); */
