@@ -30,7 +30,7 @@ function checkPal (string) {
     let reverseString = string.split("").reverse().join("");
     if (string === reverseString) {
         console.log("Palindrome !");
-    } else if (string !== reverseString) {
+    } else {
         console.log("Nope");
     }
 }

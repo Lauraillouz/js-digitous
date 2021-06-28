@@ -132,3 +132,4 @@ else if (joueur2 > joueur1) {
 } else {
     console.log("Incroyable, égalité parfaite !")
 } */
+

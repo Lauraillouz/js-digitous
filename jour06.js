@@ -14,7 +14,7 @@ function formatDate (string) {
     }
     console.log(`${day}/${month}/${myDate.getFullYear()}`);
 }
-formatDate("2021-6-4");
+formatDate("2021-06-04");
   */
 /*
 // 02 - Age
@@ -35,10 +35,14 @@ function checkProfile () {
     prompt.get([
         "email", "username", "password"
     ], function (err, res) {
-        err = "error";
+        if (err) {
+            return console.log(err);
+        }
+
         let emailRegex = /[a-z\.\-\_]+@[a-z]+\.(fr|com|net|org)/;
         let usernameRegex = /[a-zA-Z0-9\.\-]/;
         let passwordRegex = /(?=.*[0-9\-])(?=.*[a-zA-Z\-])([a-zA-Z0-9\-]+)/;
+
         if (res.email.match(emailRegex)) {
             console.log(`Your email: ${res.email}`);
         } else {
@@ -64,7 +68,7 @@ checkProfile() */
 
 
 // BONUS *
-// Format
+/* // Format
 function formatDate (string) {
     let today = new Date();
     today = moment(today).format('L');
@@ -74,16 +78,7 @@ function formatDate (string) {
     console.log(`${day}/${month}/${year}`);
 }
 formatDate();
-/*
-// 02 - Age
-function calculateAge (string) {
-    let today = new Date();
-    let birthYear = string.substring(0, 4);
-    birthYear = parseInt(birthYear);
-    let age = today.getFullYear() - birthYear;
-    console.log(age);
-}
-calculateAge("1989-05-24"); 
+
 // Age
 function calculateAge (string) {
     let birthday = moment(string, "YYYYMMDD").fromNow();

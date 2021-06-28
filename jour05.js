@@ -1,6 +1,6 @@
-var prompt = require("prompt");
+/* var prompt = require("prompt"); */
 
-/* // 01 - Calculator
+// 01 - Calculator
 function calculate(num1, operator, num2) {
     if (operator === "+") {
         console.log(num1 + num2);
@@ -17,16 +17,16 @@ function calculate(num1, operator, num2) {
     if (operator === "%") {
         console.log(num1 % num2);
     }
-} */
-/* let calculated;
-calculated = calculate(5, 4, "x");
-console.log(calculated); */
+} 
+let calculated;
+calculated = calculate(135, "/", 25);
+console.log(calculated);
 /* let stringNumbers = process.argv.slice(2);
 let numberOne = parseInt(stringNumbers[0]);
 let operator = stringNumbers[1];
 let numberTwo = parseInt(stringNumbers[2]);
-calculate(numberOne, operator, numberTwo); 
-
+calculate(numberOne, operator, numberTwo);  */
+/* 
 // 02 - Table
 var {multiply, addition} = require("./table-utils.js");
 let stringNumber = process.argv.slice(2);
@@ -35,7 +35,7 @@ multiply(number);
 
 // 03 - Separate Table
 addition(number);
-*/
+
 
 // 04 - Guess
 prompt.start();
@@ -66,7 +66,7 @@ let mysteryNum = Math.floor(Math.random() * (max - min) + min);
             console.log("Bravo !!");
         }
     })
-})()
+})() */
 
 
 
