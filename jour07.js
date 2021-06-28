@@ -32,3 +32,12 @@ let shortNames = longNames.map(function(name) {
     return name.firstName + " " + name.lastName;
 })
 console.log(shortNames); */
+
+/* // 04 Filter Numbers
+let array = [1, "toto", 34, "javascript", 8];
+let numbers = array.filter(function (num) {
+    if (typeof num === "number")
+    return num;
+});
+console.log(numbers); */
+
