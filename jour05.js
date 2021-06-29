@@ -76,10 +76,9 @@ let mysteryNum = Math.floor(Math.random() * (max - min) + min);
 
 prompt.start();
 
-// var words = ["brute", "poule", "botte", "pelle", "maire", "tarte", "terre"]
-var words = ["tarte", "brute"];
+var words = ["brute", "poule", "botte", "pelle", "maire", "tarte", "terre"]
 var randomWord = words[Math.floor(Math.random() * words.length)];
-console.log(randomWord);
+// console.log(randomWord);
 var count = 1;
 var wordLength = 5;
 

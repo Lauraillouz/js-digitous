@@ -93,18 +93,18 @@ var randomWord = words[Math.floor(Math.random() * words.length)];
 var count = 1;
 var guess = [];
 
-
 function pendu() {
     prompt.get({
-        name: "letter",
+        name: "word",
         description: "Jouons au pendu",
-        message: `Jouons au pendu`
+        message: `Entrez un mot de 5 lettres dont la première lettre est ${randomWord[0]}`
     }), function (err, res) {
 
         for (let i = 0; i < randomWord.length; i++) {
-            guess[i] = "_";
+            guess[i] =  "_"
         }
         var remainingLetters = randomWord.length;
+
 
         if (guess.length !== 1) {
             console.log("Vous ne pouvez proposez qu'une seule lettre à la fois");
@@ -116,15 +116,19 @@ function pendu() {
                 return console.log("Bravo !");
             }
             else if (count <= 10 && guess !== randomWord) {
-                for (let j = 0; j < randomWord.length; j++) {
-                    if (randomWord[j] === res.letter) {
-                        guess[j] = res.letter;
+                for (let i = 0; i < randomWord.length; i++) {
+                    if (res.word[i] === randomWord[i]) {
+                        guess[i] = randomWord[i];
+                        count++;
+                        remainingLetters--;
+                    } else if (guess[i] === undefined) {
+                        guess[i] = "_";
+                        count++;
                         remainingLetters--;
                     }
                 }
             }
         }
-        count++;
         console.log(guess);
         pendu();
     }
