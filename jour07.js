@@ -1,5 +1,6 @@
 const { random } = require("colors");
 var prompt = require("prompt");
+
 /* // O1 - File System
 var fs = require("fs");
 
@@ -19,7 +20,7 @@ let double = array.map(function(num) {
 });
 console.log(double); */
 
-/* // 03 - Map Names
+/*  // 03 - Map Names
 let longNames = [
     {
         firstName: "Jane",
@@ -30,10 +31,10 @@ let longNames = [
         lastName: "Smith"
     }
 ]
-let shortNames = longNames.map(function(name) {
-    return name.firstName + " " + name.lastName;
+let shortNames = longNames.map(function(person) {
+    return {name: `${person.firstName} ${person.lastName}`};
 })
-console.log(shortNames); */
+console.log(shortNames);  */
 
 /* // 04 Filter Numbers
 let array = [1, "toto", 34, "javascript", 8];
@@ -95,7 +96,7 @@ var guess = [];
 
 function pendu() {
     prompt.get({
-        name: "word",
+        name: "letter",
         description: "Jouons au pendu",
         message: `Entrez un mot de 5 lettres dont la première lettre est ${randomWord[0]}`
     }), function (err, res) {
@@ -105,9 +106,8 @@ function pendu() {
         }
         var remainingLetters = randomWord.length;
 
-
-        if (guess.length !== 1) {
-            console.log("Vous ne pouvez proposez qu'une seule lettre à la fois");
+        if (res.letter.length > 1) {
+            return console.log("Vous ne pouvez proposez qu'une seule lettre à la fois");
         } else {
             if (count > 10) {
                 return console.log("Perdu !");
@@ -117,18 +117,18 @@ function pendu() {
             }
             else if (count <= 10 && guess !== randomWord) {
                 for (let i = 0; i < randomWord.length; i++) {
-                    if (res.word[i] === randomWord[i]) {
+                    console.log(guess);
+                    if (res.letter[i] === randomWord[i]) {
                         guess[i] = randomWord[i];
-                        count++;
-                        remainingLetters--;
+                        guess += guess[i];
                     } else if (guess[i] === undefined) {
-                        guess[i] = "_";
-                        count++;
-                        remainingLetters--;
+                        console.log(`Loupé ! Il vous reste ${count} tentatives`);
                     }
                 }
             }
         }
+        count++;
+        remainingLetters--;
         console.log(guess);
         pendu();
     }
