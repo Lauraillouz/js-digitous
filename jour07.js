@@ -90,51 +90,51 @@ console.log(soldOutCakes); */
 
 // BONUS *
 var words = ["baryton", "cerf", "djembe", "cymbale", "zozoter"];
-var randomWord = words[Math.floor(Math.random() * words.length)];
-var count = 1;
+var mysteryWord = words[Math.floor(Math.random() * words.length)];
+mysteryWord = mysteryWord.split("");
+var tries = 10;
 var guess = [];
+
 
 function pendu() {
     prompt.get({
         name: "letter",
-        description: "Jouons au pendu",
-        message: `Entrez un mot de 5 lettres dont la première lettre est ${randomWord[0]}`
+        description: `Entrez un mot de 5 lettres dont la première lettre est ${mysteryWord[0]}`
     }, function (err, res) {
         if (err) {
             console.log(err);
         }
 
-        for (let i = 0; i < randomWord.length; i++) {
-            guess[i] =  "_";
-        }
-        var remainingLetters = randomWord.length;
-        while (remainingLetters > 0) {
-            console.log(guess.join(""));
+        for (let i = 0; i < mysteryWord.length; i++) {
+            guess[i] = mysteryWord[i];
+            guess[i] = "_";
         }
 
-        if (res.letter.length !== 1) {
-            console.log("Vous ne pouvez proposez qu'une seule lettre à la fois");
-        } else {
-            if (count > 10) {
-                return console.log("Perdu !");
-            }
-            else if (count <= 10 && guess === randomWord) {
-                return console.log("Bravo !");
-            }
-            else if (count <= 10 && guess !== randomWord) {
-                for (let i = 0; i < randomWord.length; i++) {
-                    console.log(guess);
-                    if (res.letter === randomWord[i]) {
-                        guess[i] = res.letter;
-                    } else if (guess[i] === undefined) {
-                        console.log(`Loupé ! Il vous reste ${count} tentatives`);
-                    }
+        if (guess === mysteryWord) {
+            return console.log(`Bravo !! Le mot était bien ${mysteryWord.join("")}`);
+        } else if (tries === 0) {
+            return console.log(`Vous avez perdu ! Le mot était ${mysteryWord.join("")}`);
+        } 
+
+            for (let j = 0; j < mysteryWord.length; j++) {
+                while (res.letter === mysteryWord[j]) {
+                    guess[j] = mysteryWord[j];
+                    break;
                 }
             }
-        }
-        count++;
-        remainingLetters--;
+
+            for (let k = 0; k < mysteryWord.length; k++) {
+                if (res.letter !== mysteryWord[k]) {
+                    console.log(`Oups, il vous reste ${tries} chances !`);
+                    break;
+                }
+            }
+            tries--;
+
+
+        console.log(guess.join(""));
         pendu();
+
     })
 }
 pendu();
