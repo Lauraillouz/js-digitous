@@ -16,7 +16,15 @@ function getCountries() {
 getCountries(); */
 
 
-// 02 - Chuck Norris
+/* // 02 - Chuck Norris
 
+function getFact() {
+    axios.get("https://api.chucknorris.io/jokes/random").then((res) => {
+        const jokeObject = res.data;
+        const randomChuckJoke = jokeObject.value;
+        console.log(randomChuckJoke);
+    })
+}
+getFact();
 
-
+ */
