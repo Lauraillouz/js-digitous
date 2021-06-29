@@ -99,7 +99,7 @@ function pendu() {
         name: "letter",
         description: "Jouons au pendu",
         message: `Entrez un mot de 5 lettres dont la première lettre est ${randomWord[0]}`
-    }), function (err, res) {
+    }, function (err, res) {
         if (err) {
             console.log(err);
         }
@@ -134,8 +134,7 @@ function pendu() {
         }
         count++;
         remainingLetters--;
-        console.log(guess);
         pendu();
-    }
+    })
 }
 pendu();
