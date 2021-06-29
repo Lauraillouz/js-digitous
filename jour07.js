@@ -100,14 +100,20 @@ function pendu() {
         description: "Jouons au pendu",
         message: `Entrez un mot de 5 lettres dont la première lettre est ${randomWord[0]}`
     }), function (err, res) {
+        if (err) {
+            console.log(err);
+        }
 
         for (let i = 0; i < randomWord.length; i++) {
-            guess[i] =  "_"
+            guess[i] =  "_";
         }
         var remainingLetters = randomWord.length;
+        while (remainingLetters > 0) {
+            console.log(guess.join(""));
+        }
 
-        if (res.letter.length > 1) {
-            return console.log("Vous ne pouvez proposez qu'une seule lettre à la fois");
+        if (res.letter.length !== 1) {
+            console.log("Vous ne pouvez proposez qu'une seule lettre à la fois");
         } else {
             if (count > 10) {
                 return console.log("Perdu !");
@@ -118,9 +124,8 @@ function pendu() {
             else if (count <= 10 && guess !== randomWord) {
                 for (let i = 0; i < randomWord.length; i++) {
                     console.log(guess);
-                    if (res.letter[i] === randomWord[i]) {
-                        guess[i] = randomWord[i];
-                        guess += guess[i];
+                    if (res.letter === randomWord[i]) {
+                        guess[i] = res.letter;
                     } else if (guess[i] === undefined) {
                         console.log(`Loupé ! Il vous reste ${count} tentatives`);
                     }
