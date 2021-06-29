@@ -51,31 +51,31 @@ console.log(even); */
 
 /* // 06 - Cakes
 let cakes = [
-	{
-		name: "cake",
-		flavor: "vanilla",
-		status: "available"
-	},
-	{
-		name: "brownie",
-		flavor: "chocolate",
-		status: "available"
-	},
-	{
-		name: "pie",
-		flavor: "strawberry",
-		status: "available"
-	},
-	{
-		name: "muffin",
-		flavor: "pistachio",
-		status: "available"
-	},
-	{
-		name: "donut",
-		flavor: "chocolate",
-		status: "available"
-	},
+    {
+        name: "cake",
+        flavor: "vanilla",
+        status: "available"
+    },
+    {
+        name: "brownie",
+        flavor: "chocolate",
+        status: "available"
+    },
+    {
+        name: "pie",
+        flavor: "strawberry",
+        status: "available"
+    },
+    {
+        name: "muffin",
+        flavor: "pistachio",
+        status: "available"
+    },
+    {
+        name: "donut",
+        flavor: "chocolate",
+        status: "available"
+    },
 ]
 let chocolateCakes = cakes.filter(chocolate => chocolate.flavor === "chocolate");
 // console.log(chocolateCakes);
@@ -94,43 +94,38 @@ var mysteryWord = words[Math.floor(Math.random() * words.length)];
 mysteryWord = mysteryWord.split("");
 var tries = 10;
 var guess = [];
+for (let i = 0; i < mysteryWord.length; i++) {
+    guess[i] = "_";
+} 
+guess[0] = mysteryWord[0];
 
 
 function pendu() {
+    if (tries === 10) {
+        console.log(guess.join(""));
+    }
+    if (guess.join("") == mysteryWord.join("")) {
+        return console.log(`Bravo !! Le mot était bien ${mysteryWord.join("")}`);
+    } else if (tries === 0) {
+        return console.log(`Vous avez perdu ! Le mot était ${mysteryWord.join("")}`);
+    }
     prompt.get({
         name: "letter",
-        description: `Entrez un mot de 5 lettres dont la première lettre est ${mysteryWord[0]}`
+        description: "Jouons au pendu"
     }, function (err, res) {
         if (err) {
-            console.log(err);
+            return err;
         }
 
         for (let i = 0; i < mysteryWord.length; i++) {
-            guess[i] = mysteryWord[i];
-            guess[i] = "_";
+            if (res.letter === mysteryWord[i]) {
+                guess[i] = mysteryWord[i];
+            }
         }
-
-        if (guess === mysteryWord) {
-            return console.log(`Bravo !! Le mot était bien ${mysteryWord.join("")}`);
-        } else if (tries === 0) {
-            return console.log(`Vous avez perdu ! Le mot était ${mysteryWord.join("")}`);
-        } 
-
-            for (let j = 0; j < mysteryWord.length; j++) {
-                while (res.letter === mysteryWord[j]) {
-                    guess[j] = mysteryWord[j];
-                    break;
-                }
-            }
-
-            for (let k = 0; k < mysteryWord.length; k++) {
-                if (res.letter !== mysteryWord[k]) {
-                    console.log(`Oups, il vous reste ${tries} chances !`);
-                    break;
-                }
-            }
-            tries--;
-
+        tries--;
+        if (mysteryWord.indexOf(res.letter) === -1) {
+            console.log(`Oups, il vous reste ${tries} chances !`);
+        }
 
         console.log(guess.join(""));
         pendu();

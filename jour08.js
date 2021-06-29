@@ -26,7 +26,7 @@ function getFact() {
 }
 getFact(); */
 
-// 03 Pkemon
+// 03 Pokemon
 /* var pokemons = [];
 
 function catchPokemon(id) {
