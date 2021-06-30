@@ -3,7 +3,7 @@ prompt.start()
 
 // Initialisation du rover
 let grid = [
-    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    ["N", " ", " ", " ", " ", " ", " ", " ", " ", " "],
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -17,8 +17,10 @@ let grid = [
 let rover = {
     direction: "N",
     x: 0,
-    y: 0
+    y: 0,
+    travelLog: []
 }
+
 
 // Tourner le rover à gauche
 const turnLeft = (rover) => {
@@ -36,12 +38,11 @@ const turnLeft = (rover) => {
             (rover).direction = "N";
             break;
     }
-    console.log((rover).direction)
 }
+
 
 // Tourner le rover à droite
 const turnRight = (rover) => {
-    console.log("Je teste la fonction turnRight", rover)
     switch (rover.direction) {
         case "N":
             rover.direction = "E";
@@ -56,12 +57,12 @@ const turnRight = (rover) => {
             rover.direction = "N";
             break;
     }
-    console.log(rover.direction)
 }
 
 
 const moveForward = (rover) => {
-
+    rover.travelLog.push(`x : ${rover.x}, y : ${rover.y}`);
+    console.log(rover.travelLog);
     switch (rover.direction) {
         case "N":
             rover.y--;
@@ -76,22 +77,9 @@ const moveForward = (rover) => {
             rover.x--;
             break;
     }
+    grid[rover.y][rover.x] = rover.direction;
 }
 
-// Placement inital du rover
-let roverPosition = grid[(rover.y)][rover.x] = rover.direction;
-if (rover.x === 0 && rover.y === 0) {
-    roverPosition;
-}
-
-/* console.log(rover);
-turnLeft(rover);
-moveForward(rover);
-moveForward(rover);
-turnRight(rover);
-moveForward(rover); */
-
-// console.log(rover);
 
 const pilotRover = (str) => {
 
@@ -104,5 +92,8 @@ const pilotRover = (str) => {
     }
 }
 
-pilotRover("r")
+pilotRover("r");
+pilotRover("f");
+pilotRover("f");
 console.table(grid);
+
