@@ -92,8 +92,39 @@ const pilotRover = (str) => {
     }
 }
 
+/* pilotRover("r");
+pilotRover("f");
+pilotRover("f");
 pilotRover("r");
 pilotRover("f");
-pilotRover("f");
-console.table(grid);
+console.table(grid); */
 
+
+function play() {
+    console.table(grid);
+    
+    prompt.get({
+        name: "input",
+        description: "Tapez 'r' pour diriger votre Rover vers la droite, 'l' pour le diriger vers la gauche et 'f' pour le faire avancer"
+    }, function(err, res) {
+    
+        if (err) {
+            console.log(err);
+        }
+    
+        if (res.input === "r") {
+            pilotRover("r");
+            play();
+        } else if (res.input === "l") {
+            pilotRover("l");
+            play();
+        } else if(res.input === "f") {
+            pilotRover("f");
+            play();
+        }
+    
+
+    }
+    )
+}
+play();
