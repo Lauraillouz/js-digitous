@@ -68,6 +68,7 @@ const turnRight = (rover) => {
 }
 
 
+// Faire avancer le Rover
 const moveForward = (rover) => {
     rover.travelLog.push(`x : ${rover.x}, y : ${rover.y}`);
     console.log(rover.travelLog);
@@ -106,6 +107,7 @@ const moveForward = (rover) => {
 }
 
 
+// Faire reculer le Rover
 const moveBackward = (rover) => {
     rover.travelLog.push(`x : ${rover.x}, y : ${rover.y}`);
     console.log(rover.travelLog);
@@ -144,7 +146,12 @@ const moveBackward = (rover) => {
 }
 
 
+// Pilotage du Rover
 const pilotRover = (str) => {
+    if (str !== /(l|r|f|b)/i || str.length < 0){
+        console.log("Vous n'avez pas saisie de direction valide !!")
+    }
+
     if (str === "l") {
         turnLeft(rover);
     } else if (str === "r") {
@@ -157,6 +164,7 @@ const pilotRover = (str) => {
 }
 
 
+// Jouer avec Prompt !
 function play() {
     console.table(grid);
 
@@ -176,6 +184,9 @@ function play() {
             play();
         } else if(res.input === "b") {
             pilotRover("b");
+            play();
+        } else if (res.input !== /(l|r|f|b)/i || res.input.length < 0){
+            console.log("Vous n'avez pas saisie de direction valide !!")
             play();
         }
     }
