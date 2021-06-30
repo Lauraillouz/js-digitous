@@ -78,6 +78,7 @@ const moveForward = (rover) => {
             if (rover.y === 0) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !");
             } else {
+                grid[rover.y][rover.x] = " ";
                 rover.y--;
             }
             break;
@@ -85,13 +86,15 @@ const moveForward = (rover) => {
             if (rover.x === 9) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !");
             } else {
-            rover.x++;
+                grid[rover.y][rover.x] = " ";
+                rover.x++;
             }
             break;
         case "S":
             if (rover.y === 9) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !")
             } else {
+                grid[rover.y][rover.x] = " ";
                 rover.y++;
             }
             break;
@@ -99,6 +102,7 @@ const moveForward = (rover) => {
             if (rover.x === 0) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !")
             } else {
+                grid[rover.y][rover.x] = " ";
                 rover.x--;
             }
             break;
@@ -117,6 +121,7 @@ const moveBackward = (rover) => {
             if (rover.y === 9) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !");
             } else {
+                grid[rover.y][rover.x] = " ";
                 rover.y++;
             }
             break;
@@ -124,13 +129,15 @@ const moveBackward = (rover) => {
             if (rover.x === 0) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !");
             } else {
-            rover.x--;
+                grid[rover.y][rover.x] = " ";
+                rover.x--;
             }
             break;
         case "S":
             if (rover.y === 0) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !")
             } else {
+                grid[rover.y][rover.x] = " ";
                 rover.y--;
             }
             break;
@@ -138,6 +145,7 @@ const moveBackward = (rover) => {
             if (rover.x === 9) {
                 console.log("Attention ! Vous ne pouvez pas sortir de la grille !")
             } else {
+                grid[rover.y][rover.x] = " ";
                 rover.x++;
             }
             break;
@@ -148,7 +156,7 @@ const moveBackward = (rover) => {
 
 // Pilotage du Rover
 const pilotRover = (str) => {
-    if (str !== /(l|r|f|b)/i || str.length < 0){
+    if (str !== "l" && str !== "f" && str !== "r" && str !== "b") {
         console.log("Vous n'avez pas saisie de direction valide !!")
     }
 
@@ -172,7 +180,7 @@ function play() {
         name: "input",
         description: "Tapez 'r' pour diriger votre Rover vers la droite, 'l' pour le diriger vers la gauche et 'f' pour le faire avancer"
     }, function(err, res) {
-    
+
         if (res.input === "r") {
             pilotRover("r");
             play();
@@ -185,7 +193,7 @@ function play() {
         } else if(res.input === "b") {
             pilotRover("b");
             play();
-        } else if (res.input !== /(l|r|f|b)/i || res.input.length < 0){
+        } else if (res.input !== "l" && res.input !== "f" && res.input !== "r" && res.input !== "b") {
             console.log("Vous n'avez pas saisie de direction valide !!")
             play();
         }
